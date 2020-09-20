@@ -16,10 +16,10 @@ public class CurrencyRecordFactoryImplUnitTest {
                 currencyRecordFactory.createCurrencyRecord("C1", "C2",
                         2, "C333");
 
-        assertEquals("C1", currencyRecord.getCurrency());
-        assertEquals("DAQ", currencyRecord.getNum());
-        assertEquals("CODE", currencyRecord.getCode());
-        assertEquals(Integer.valueOf(11), currencyRecord.getNumberOfDigits());
+        assertEquals("C333", currencyRecord.getCurrency());
+        assertEquals("C2", currencyRecord.getNum());
+        assertEquals("C1", currencyRecord.getCode());
+        assertEquals(Integer.valueOf(2), currencyRecord.getNumberOfDigits());
 
     }
 }
