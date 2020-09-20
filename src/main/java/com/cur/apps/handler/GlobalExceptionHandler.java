@@ -14,12 +14,6 @@ import java.util.HashMap;
 @RestController
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(value = {EntityNotFoundException.class})
-    public ErrorResponse handleAnyException(EntityNotFoundException ex, WebRequest request) {
-        return new ErrorResponse(ErrorCode.GEN_ERR_01, "Can not find data.",
-                new HashMap<>(), "en");
-    }
-
     @ExceptionHandler(value = {ServiceException.class})
     public ErrorResponse handleAnyException(ServiceException ex) {
         return new ErrorResponse(ex.getErrorCode(), ex.getErrorCode().getMessage(),

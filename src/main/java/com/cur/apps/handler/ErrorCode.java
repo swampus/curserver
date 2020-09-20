@@ -2,8 +2,7 @@ package com.cur.apps.handler;
 
 public enum ErrorCode {
 
-
-    GEN_ERR_01("Can not find data");
+    GEN_WIK_01("Can not connect to WIKI");
 
     private String message;
 
