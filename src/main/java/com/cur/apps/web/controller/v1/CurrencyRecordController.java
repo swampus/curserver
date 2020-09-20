@@ -11,13 +11,15 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/rest/v1/CurrencyRecord.svc")
 public class CurrencyRecordController {
 
+    public static final String CURRENCY_RECORD_CODE = "/currencyRecord/code";
+
     @Autowired
     private MapperFacade mapperFacade;
 
     @Autowired
     private CurrencyRecordService currencyRecordService;
 
-    @PostMapping("/currencyRecord/code")
+    @PostMapping(CURRENCY_RECORD_CODE)
     public CurrencyRecordDtoResponse getCurrencyCode(@RequestBody GetCurrencyRecordRequest getCurrencyRecordRequest) {
         return mapperFacade.map(currencyRecordService.getByCode(getCurrencyRecordRequest.getCode()),
                 CurrencyRecordDtoResponse.class);

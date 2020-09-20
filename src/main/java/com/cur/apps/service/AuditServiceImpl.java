@@ -22,4 +22,9 @@ public class AuditServiceImpl implements AuditService {
     public List<LogRecord> getLogRecords() {
         return logRecordRepository.findAll();
     }
+
+    @Override
+    public List<LogRecord> getCurrencyRecordAccessLog(String url) {
+        return logRecordRepository.findAllByUrlContains(url);
+    }
 }
