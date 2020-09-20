@@ -27,13 +27,10 @@ public class Application {
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 
         return args -> {
-
-            logger.debug("Let's inspect the beans provided by Spring Boot:");
             CurrencyCodesLoader currencyCodesLoader = ctx.getBean(CurrencyCodesLoader.class);
             currencyCodesLoader.loadCurrenciesFromWikiIntoDatabase().values()
                     .forEach((CurrencyRecord currencyRecord) -> logger.info("Currency loaded: "
                             + ReflectionToStringBuilder.reflectionToString(currencyRecord)));
-
         };
     }
 }
